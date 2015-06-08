@@ -14,12 +14,15 @@ class App7 {
 	
 }
 
-$passedUrl = $_GET['url'];
+echo $_GET['xss1'];
+echo htmlentities($_GET['xss2']);
+echo '<a href="'.htmlentities($_GET['xss3']).'">asd</a>';
+
 $ds1 = new App7;
-$ds1->setURL($passedUrl);
+$ds1->setURL($_GET['xss4']);
 $ds1->url = 1;
 $ds1->printUrl();
 
 $ds2 = new App7;
-$ds2->setURL($passedUrl);
+$ds2->setURL($_GET['xss5']);
 $ds2->printUrl();
